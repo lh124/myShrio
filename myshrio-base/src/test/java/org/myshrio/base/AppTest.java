@@ -14,10 +14,16 @@ public class AppTest  extends TestCase{
 		org.apache.shiro.mgt.SecurityManager manager=factory.getInstance();
 		SecurityUtils.setSecurityManager(manager);
 		org.apache.shiro.subject.Subject subject=SecurityUtils.getSubject();
-		AuthenticationToken authenticationToken=new UsernamePasswordToken("mldn", "1234");
-		subject.login(authenticationToken);
-		System.out.println("用户名:"+authenticationToken.getPrincipal());
-		System.out.println("密码："+authenticationToken.getCredentials());
-
+		AuthenticationToken authenticationToken=new UsernamePasswordToken("mldn", "java");
+		try{
+			subject.login(authenticationToken);
+			System.out.println("用户名:"+authenticationToken.getPrincipal());
+			System.out.println("密码："+authenticationToken.getCredentials());
+			if(subject.hasRole("dept")) {
+				System.out.println("有该角色");
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

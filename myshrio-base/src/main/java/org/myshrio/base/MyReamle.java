@@ -9,9 +9,9 @@ import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.realm.Realm;
 
-public class MyReamle implements Realm{
+public class MyReamle /*implements Realm*/{
 
-	@Override
+	/*@Override
 	public String getName() {
 		return "shrio-myrealm";
 	}
@@ -31,5 +31,5 @@ public class MyReamle implements Realm{
 		throw new IncorrectCredentialsException("用户名或密码错误");
 	}
 		return new SimpleAuthenticationInfo(token.getPrincipal(), token.getCredentials(),this.getName());
-	}
+	}*/
 }
