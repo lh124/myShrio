@@ -8,7 +8,7 @@ import org.apache.shiro.config.IniSecurityManagerFactory;
 import org.apache.shiro.util.Factory;
 
 import junit.framework.TestCase;
-public class AppTest  extends TestCase{
+public class AppTest  extends TestCase{   
 	public void testApp(){
 		Factory<org.apache.shiro.mgt.SecurityManager> factory=new IniSecurityManagerFactory("classpath:shrio.ini");
 		org.apache.shiro.mgt.SecurityManager manager=factory.getInstance();
